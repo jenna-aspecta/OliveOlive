@@ -13,6 +13,11 @@ def read(rel_path):
     with open(os.path.join(here, rel_path)) as fp:
         return fp.read()
 
+def read(rel_path):
+    here = os.path.abspath(os.path.dirname(__file__))
+    with open(os.path.join(here, rel_path)) as fp:
+        return fp.read()
+
 
 def get_version(rel_path):
     for line in read(rel_path).splitlines():
